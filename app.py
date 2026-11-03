@@ -4,7 +4,7 @@ from datetime import date
 
 st.set_page_config(page_title="CADEK Diocese Manager", page_icon="⛪", layout="wide")
 st.title("⛪ CADEK Diocese Management")
-st.caption("Catholic Diocese of Abakaliki - Parishes & Activities")
+st.caption("Catholic Diocese of Ekwulobia - Parishes & Activities")
 
 if "parishes" not in st.session_state:
     st.session_state.parishes = []
