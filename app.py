@@ -120,4 +120,4 @@ elif menu == "Add New":
         phone = st.text_input("Phone")
         if st.button("Save Parish"):
             if name:
-                st.session_state.parishes.append({"name
+                st.session_state.parishes.append({name
