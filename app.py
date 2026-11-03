@@ -120,4 +120,22 @@ elif menu == "Add New":
         phone = st.text_input("Phone")
         if st.button("Save Parish"):
             if name:
-                st.session_state.parishes.append({name
+                st.session_state.parishes.append({"name":name,"location":loc,"priest_in_charge":priest,"phone":phone})
+                st.success(f"{name} saved!")
+            else:
+                st.error("Enter parish name")
+    with tab2:
+        name = st.text_input("Person Name", key="pn")
+        role = st.selectbox("Role", ["Parish Priest","Assistant Priest","Catechist","Secretary","Youth Leader","Other"])
+        parish = st.text_input("Parish", key="pp")
+        if st.button("Save Personnel"):
+            st.session_state.personnel.append({"name":name,"role":role,"parish":parish})
+            st.success("Saved!")
+    with tab3:
+        title = st.text_input("Activity Title")
+        parish = st.text_input("Parish Involved", key="ap")
+        d = st.date_input("Date", value=date.today())
+        atype = st.selectbox("Type", ["Sunday Mass","Feast Day","Harvest","Youth Week","Meeting","Other"])
+        if st.button("Save Activity"):
+            st.session_state.activities.append({"title":title,"parish":parish,"date":str(d),"type":atype})
+            st.success("Activity added!")
